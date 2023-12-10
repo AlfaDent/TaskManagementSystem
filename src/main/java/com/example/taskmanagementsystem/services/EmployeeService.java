@@ -2,7 +2,9 @@ package com.example.taskmanagementsystem.services;
 
 import com.example.taskmanagementsystem.DTO.EmployeeDTO;
 import com.example.taskmanagementsystem.models.Employee;
+import com.example.taskmanagementsystem.models.Task;
 import com.example.taskmanagementsystem.repositories.EmployeeRepository;
+import com.example.taskmanagementsystem.repositories.TaskRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,8 @@ import java.util.Optional;
 public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
+    @Autowired
+    private TaskRepository taskRepository;
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
     }
@@ -36,5 +40,8 @@ public class EmployeeService {
         employee.setLastname(employee.getLastname());
         employee.setEmail(employeeDTO.getEmail());
         employeeRepository.save(employee);
+    }
+    public List<Task> getTasksByEmployeeId(Long id){
+        return taskRepository.findTasksByEmployee_Id(id);
     }
 }
