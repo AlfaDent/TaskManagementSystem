@@ -36,8 +36,9 @@ public class Task {
                 "id=" + id +
                 ", header='" + header + '\'' +
                 ", description='" + description + '\'' +
-                ", statusId=" + status +
-                ", priorityId=" + priority +
+                ", status=" + status +
+                ", priority=" + priority +
+                ", employee=" + employee +
                 '}';
     }
 }
