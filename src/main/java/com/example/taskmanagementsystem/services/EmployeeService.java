@@ -1,4 +1,4 @@
-package com.example.employeemanagementsystem.services;
+package com.example.taskmanagementsystem.services;
 
 import com.example.taskmanagementsystem.DTO.EmployeeDTO;
 import com.example.taskmanagementsystem.models.Employee;
@@ -17,7 +17,7 @@ public class EmployeeService {
     public List<Employee> getAllEmployees(){
         return employeeRepository.findAll();
     }
-    public Optional<Employee> getemployeeById(Long id){
+    public Optional<Employee> getEmployeeById(Long id){
         return employeeRepository.findById(id);
     }
     public Employee createEmployee(EmployeeDTO employeeDTO) {
