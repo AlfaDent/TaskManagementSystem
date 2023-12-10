@@ -2,6 +2,7 @@ package com.example.taskmanagementsystem.controllers;
 
 import com.example.taskmanagementsystem.DTO.EmployeeDTO;
 import com.example.taskmanagementsystem.models.Employee;
+import com.example.taskmanagementsystem.models.Task;
 import com.example.taskmanagementsystem.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,5 +37,9 @@ public class EmployeeController {
     @PutMapping(value = "/employee/{id}")
     public void editEmployee(@PathVariable Long id, @RequestBody EmployeeDTO employeeDTO){
         employeeService.editEmployeeById(id, employeeDTO);
+    }
+    @GetMapping(value = "employee/{id}/tasks")
+    public List<Task> getTasksByEmployeeId(@PathVariable Long id){
+        return employeeService.getTasksByEmployeeId(id);
     }
 }

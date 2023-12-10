@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -20,6 +22,8 @@ public class Employee {
     @Column(unique = true)
     private String email;
     private String password;
+    @OneToMany
+    private List<Task> tasks;
 
     @Override
     public String toString() {
