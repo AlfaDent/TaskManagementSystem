@@ -52,7 +52,4 @@ public class TaskService {
         task.setEmployee(employeeRepository.findById(taskDTO.getEmployeeId()).orElse(null));
         taskRepository.save(task);
     }
-    public List<Task> getAllTasksByEmployeeId(Long id){
-        return taskRepository.findTasksByEmployee_Id(id);
-    }
 }
