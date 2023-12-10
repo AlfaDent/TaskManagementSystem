@@ -22,7 +22,9 @@ public class EmployeeService {
     }
     public Employee createEmployee(EmployeeDTO employeeDTO) {
         Employee employee = new Employee();
-
+        employee.setName(employeeDTO.getName());
+        employee.setLastname(employee.getLastname());
+        employee.setEmail(employeeDTO.getEmail());
         return employeeRepository.save(employee);
     }
     public void deleteEmployeeById(Long id){
@@ -30,7 +32,9 @@ public class EmployeeService {
     }
     public void editEmployeeById(Long id, EmployeeDTO employeeDTO){
         Employee employee = employeeRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("employee not found with id: " + id));
-
+        employee.setName(employeeDTO.getName());
+        employee.setLastname(employee.getLastname());
+        employee.setEmail(employeeDTO.getEmail());
         employeeRepository.save(employee);
     }
 }
