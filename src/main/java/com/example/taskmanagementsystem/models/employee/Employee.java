@@ -1,5 +1,6 @@
 package com.example.taskmanagementsystem.models.employee;
 
+import com.example.taskmanagementsystem.models.task.Task;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +24,7 @@ public class Employee {
     private String email;
     private String password;
     @OneToMany
-    private List<EmployeeTasks> tasks;
+    private List<Task> tasks;
 
     @Override
     public String toString() {
