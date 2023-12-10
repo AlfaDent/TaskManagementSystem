@@ -1,7 +1,7 @@
 package com.example.taskmanagementsystem.services;
 
 import com.example.taskmanagementsystem.DTO.TaskDTO;
-import com.example.taskmanagementsystem.models.Task;
+import com.example.taskmanagementsystem.models.task.Task;
 import com.example.taskmanagementsystem.repositories.EmployeeRepository;
 import com.example.taskmanagementsystem.repositories.PriorityRepository;
 import com.example.taskmanagementsystem.repositories.StatusRepository;

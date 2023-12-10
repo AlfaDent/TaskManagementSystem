@@ -1,6 +1,6 @@
 package com.example.taskmanagementsystem.DTO;
 
-import com.example.taskmanagementsystem.models.Employee;
+import com.example.taskmanagementsystem.models.employee.Employee;
 import lombok.Getter;
 import lombok.Setter;
 

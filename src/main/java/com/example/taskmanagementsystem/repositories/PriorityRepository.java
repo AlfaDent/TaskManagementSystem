@@ -1,6 +1,6 @@
 package com.example.taskmanagementsystem.repositories;
 
-import com.example.taskmanagementsystem.models.TaskPriority;
+import com.example.taskmanagementsystem.models.task.TaskPriority;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

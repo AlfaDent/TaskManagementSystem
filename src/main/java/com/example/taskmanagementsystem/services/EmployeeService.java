@@ -1,8 +1,8 @@
 package com.example.taskmanagementsystem.services;
 
 import com.example.taskmanagementsystem.DTO.EmployeeDTO;
-import com.example.taskmanagementsystem.models.Employee;
-import com.example.taskmanagementsystem.models.Task;
+import com.example.taskmanagementsystem.models.employee.Employee;
+import com.example.taskmanagementsystem.models.task.Task;
 import com.example.taskmanagementsystem.repositories.EmployeeRepository;
 import com.example.taskmanagementsystem.repositories.TaskRepository;
 import jakarta.persistence.EntityNotFoundException;

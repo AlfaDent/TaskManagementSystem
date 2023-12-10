@@ -1,7 +1,7 @@
 package com.example.taskmanagementsystem.controllers;
 
 import com.example.taskmanagementsystem.DTO.TaskDTO;
-import com.example.taskmanagementsystem.models.Task;
+import com.example.taskmanagementsystem.models.task.Task;
 import com.example.taskmanagementsystem.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

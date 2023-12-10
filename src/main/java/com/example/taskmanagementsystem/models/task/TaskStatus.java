@@ -1,4 +1,4 @@
-package com.example.taskmanagementsystem.models;
+package com.example.taskmanagementsystem.models.task;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class TaskPriority {
+public class TaskStatus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,7 +15,7 @@ public class TaskPriority {
 
     @Override
     public String toString() {
-        return "TaskPriority{" +
+        return "TaskStatus{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

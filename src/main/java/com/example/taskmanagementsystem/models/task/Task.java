@@ -1,5 +1,6 @@
-package com.example.taskmanagementsystem.models;
+package com.example.taskmanagementsystem.models.task;
 
+import com.example.taskmanagementsystem.models.employee.Employee;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,10 +27,6 @@ public class Task {
     @ManyToOne
     private Employee employee;
 
-    public Task(Long id) {
-        this.id = id;
-    }
-
     @Override
     public String toString() {
         return "Task{" +
@@ -38,7 +35,10 @@ public class Task {
                 ", description='" + description + '\'' +
                 ", status=" + status +
                 ", priority=" + priority +
-                ", employee=" + employee +
+                ", employee=" + employee.getId() +
+                                employee.getName() +
+                                employee.getLastname() +
+                                employee.getEmail() +
                 '}';
     }
 }
