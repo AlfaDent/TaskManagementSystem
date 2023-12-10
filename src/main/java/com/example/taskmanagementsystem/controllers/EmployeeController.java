@@ -40,6 +40,6 @@ public class EmployeeController {
     }
     @GetMapping(value = "employee/{id}/tasks")
     public List<Task> getTasksByEmployeeId(@PathVariable Long id){
-        return employeeService.getTasksByEmployeeId(id);
+        return employeeService.getAllTasksByEmployeeId(id);
     }
 }
