@@ -23,7 +23,7 @@ public class Task {
     @ManyToOne
     //@NotNull
     private TaskPriority priority;
-    @OneToOne
+    @ManyToOne
     private Employee employee;
 
     public Task(Long id) {
