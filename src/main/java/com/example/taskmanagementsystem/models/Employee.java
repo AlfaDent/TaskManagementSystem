@@ -32,6 +32,7 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
+                ", tasks=" + tasks +
                 '}';
     }
 }
