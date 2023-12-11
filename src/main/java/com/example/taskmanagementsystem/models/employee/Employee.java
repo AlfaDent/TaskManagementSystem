@@ -7,7 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -23,8 +25,8 @@ public class Employee {
     @Column(unique = true)
     private String email;
     private String password;
-    @OneToMany
-    private List<Task> tasks;
+    @OneToMany( fetch = FetchType.EAGER)
+    private List<Task> tasks = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -33,7 +35,9 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", email='" + email + '\'' +
-                ", tasks=" + tasks +
+                ", tasks=" + tasks.stream()
+                .map(Task::getHeader)
+                .collect(Collectors.joining(", ")) +
                 '}';
     }
 }

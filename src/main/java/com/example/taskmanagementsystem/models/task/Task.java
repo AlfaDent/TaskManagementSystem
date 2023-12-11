@@ -25,6 +25,7 @@ public class Task {
     //@NotNull
     private TaskPriority priority;
     @ManyToOne
+    @JoinColumn(name = "employee_id")
     private Employee employee;
 
     @Override
@@ -36,9 +37,9 @@ public class Task {
                 ", status=" + status +
                 ", priority=" + priority +
                 ", employee=" + employee.getId() +
-                                employee.getName() +
-                                employee.getLastname() +
-                                employee.getEmail() +
+                employee.getName() +
+                employee.getLastname() +
+                employee.getEmail() +
                 '}';
     }
 }
