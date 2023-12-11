@@ -1,6 +1,7 @@
 package com.example.taskmanagementsystem.models.task;
 
 import com.example.taskmanagementsystem.models.employee.Employee;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,6 +27,7 @@ public class Task {
     private TaskPriority priority;
     @ManyToOne
     @JoinColumn(name = "employee_id")
+    @JsonBackReference
     private Employee employee;
 
     @Override

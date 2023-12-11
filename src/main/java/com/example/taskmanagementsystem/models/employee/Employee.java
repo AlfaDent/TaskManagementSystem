@@ -1,6 +1,8 @@
 package com.example.taskmanagementsystem.models.employee;
 
 import com.example.taskmanagementsystem.models.task.Task;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,8 +26,10 @@ public class Employee {
     private String lastname;
     @Column(unique = true)
     private String email;
+    @JsonIgnore
     private String password;
-    @OneToMany( fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference
     private List<Task> tasks = new ArrayList<>();
 
     @Override
