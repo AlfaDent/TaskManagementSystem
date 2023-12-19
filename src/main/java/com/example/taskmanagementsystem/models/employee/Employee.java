@@ -9,9 +9,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Getter
@@ -29,19 +27,10 @@ public class Employee {
     @JsonIgnore
     private String password;
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonManagedReference()
+    private List<Task> tasksToDo;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonManagedReference
-    private List<Task> tasks = new ArrayList<>();
+    private List<Task> tasksGiven;
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", email='" + email + '\'' +
-                ", tasks=" + tasks.stream()
-                .map(Task::getHeader)
-                .collect(Collectors.joining(", ")) +
-                '}';
-    }
 }

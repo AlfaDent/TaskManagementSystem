@@ -29,19 +29,9 @@ public class Task {
     @JoinColumn(name = "employee_id")
     @JsonBackReference
     private Employee employee;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    @JsonBackReference
+    private Employee author;
 
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", header='" + header + '\'' +
-                ", description='" + description + '\'' +
-                ", status=" + status +
-                ", priority=" + priority +
-                ", employee=" + employee.getId() +
-                employee.getName() +
-                employee.getLastname() +
-                employee.getEmail() +
-                '}';
-    }
 }
