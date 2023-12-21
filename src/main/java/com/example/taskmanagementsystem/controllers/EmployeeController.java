@@ -1,6 +1,7 @@
 package com.example.taskmanagementsystem.controllers;
 
 import com.example.taskmanagementsystem.DTO.EmployeeDTO;
+import com.example.taskmanagementsystem.DTO.TaskAssignmentDTO;
 import com.example.taskmanagementsystem.models.employee.Employee;
 import com.example.taskmanagementsystem.models.task.Task;
 import com.example.taskmanagementsystem.services.EmployeeService;
@@ -44,7 +45,7 @@ public class EmployeeController {
         return employeeService.getAllTasksByEmployeeId(id);
     }
     @PostMapping(value = "/employee/{id}/give_task")
-    public void setTaskToEmployee(@PathVariable Long id, @RequestBody Long taskId, @RequestBody Long employeeId){
-        employeeService.setTask(taskId, id, employeeId);
+    public void setTaskToEmployee(@PathVariable Long id, @RequestBody TaskAssignmentDTO taskAssignmentDTO){
+        employeeService.setTask(taskAssignmentDTO.getTaskId(), id, taskAssignmentDTO.getEmployeeId());
     }
 }
