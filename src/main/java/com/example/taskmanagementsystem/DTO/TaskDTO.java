@@ -3,7 +3,6 @@ package com.example.taskmanagementsystem.DTO;
 import com.example.taskmanagementsystem.models.task.Task;
 import lombok.Getter;
 import lombok.Setter;
-
 @Setter
 @Getter
 public class TaskDTO extends Task {
