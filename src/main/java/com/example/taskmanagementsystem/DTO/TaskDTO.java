@@ -11,6 +11,4 @@ public class TaskDTO extends Task {
     private String description;
     private Long statusId;
     private Long priorityId;
-    private Long employeeId;
-
 }

@@ -45,6 +45,6 @@ public class EmployeeController {
     }
     @PostMapping(value = "/employee/{id}/give_task")
     public void setTaskToEmployee(@PathVariable Long id, @RequestBody Long taskId, @RequestBody Long employeeId){
-        employeeService.setTask(taskId, id,employeeId);
+        employeeService.setTask(taskId, id, employeeId);
     }
 }

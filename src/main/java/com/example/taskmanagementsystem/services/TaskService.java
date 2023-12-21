@@ -21,8 +21,8 @@ public class TaskService {
     private StatusRepository statusRepository;
     @Autowired
     private PriorityRepository priorityRepository;
-    @Autowired
-    private EmployeeRepository employeeRepository;
+//    @Autowired
+//    private EmployeeRepository employeeRepository;
 
 
     public List<Task> getAllTasks(){
@@ -37,7 +37,6 @@ public class TaskService {
         task.setDescription(taskDTO.getDescription());
         task.setStatus(statusRepository.findById(taskDTO.getStatusId()).orElse(null));
         task.setPriority(priorityRepository.findById(taskDTO.getPriorityId()).orElse(null));
-        task.setEmployee(employeeRepository.findById(taskDTO.getEmployeeId()).orElse(null));
         return taskRepository.save(task);
     }
     public void deleteTaskById(Long id){
@@ -49,7 +48,6 @@ public class TaskService {
         task.setDescription(taskDTO.getDescription());
         task.setStatus(statusRepository.findById(taskDTO.getStatusId()).orElse(null));
         task.setPriority(priorityRepository.findById(taskDTO.getPriorityId()).orElse(null));
-        task.setEmployee(employeeRepository.findById(taskDTO.getEmployeeId()).orElse(null));
         taskRepository.save(task);
     }
 }
