@@ -98,7 +98,7 @@ public class EmployeeControllerTest {
     @Test
     public void testSetTaskToEmployee() throws Exception {
         Long id = 1L;
-        Long taskId = 2L;
+        Long taskId = 1L;
         Long employeeId = 2L;
         doNothing().when(employeeService).setTask(taskId, id, employeeId);
         mockMvc.perform(post("/employee/" + id + "/give_task")

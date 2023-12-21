@@ -50,5 +50,6 @@ public class EmployeeService {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new EntityNotFoundException("task not found with id: " + taskId));
         task.setAuthor(author);
         task.setEmployee(employee);
+        taskRepository.save(task);
     }
 }
