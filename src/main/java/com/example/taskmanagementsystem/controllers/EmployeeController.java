@@ -6,6 +6,7 @@ import com.example.taskmanagementsystem.models.task.Task;
 import com.example.taskmanagementsystem.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class EmployeeController {
     public Optional<Employee> getEmployeeById(@PathVariable Long id){
         return employeeService.getEmployeeById(id);
     }
-    @PostMapping(value = "/employee",consumes = {"*/*"})
+    @PostMapping(value = "/employee", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeDTO employeeDTO){
         Employee employee = employeeService.createEmployee(employeeDTO);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);

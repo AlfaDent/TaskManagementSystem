@@ -27,10 +27,9 @@ public class Employee {
     @JsonIgnore
     private String password;
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonManagedReference()
+    @JsonManagedReference("tasksToDo")
     private List<Task> tasksToDo;
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonManagedReference
+    @JsonManagedReference("tasksToGive")
     private List<Task> tasksToGive;
-
 }

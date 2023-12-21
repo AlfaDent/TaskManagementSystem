@@ -27,11 +27,10 @@ public class Task {
     private TaskPriority priority;
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    @JsonBackReference
+    @JsonBackReference("tasksToDo")
     private Employee employee;
     @ManyToOne
     @JoinColumn(name = "author_id")
-    @JsonBackReference
+    @JsonBackReference("tasksToGive")
     private Employee author;
-
 }
