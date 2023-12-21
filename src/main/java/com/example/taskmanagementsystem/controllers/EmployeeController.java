@@ -25,7 +25,7 @@ public class EmployeeController {
     public Optional<Employee> getEmployeeById(@PathVariable Long id){
         return employeeService.getEmployeeById(id);
     }
-    @PostMapping(value = "/employee")
+    @PostMapping(value = "/employee",consumes = {"*/*"})
     public ResponseEntity<Employee> createEmployee(@RequestBody EmployeeDTO employeeDTO){
         Employee employee = employeeService.createEmployee(employeeDTO);
         return new ResponseEntity<>(employee, HttpStatus.CREATED);
