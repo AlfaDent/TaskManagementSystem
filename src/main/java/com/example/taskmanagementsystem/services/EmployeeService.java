@@ -44,4 +44,11 @@ public class EmployeeService {
     public List<Task> getAllTasksByEmployeeId(Long id){
         return taskRepository.findTasksByEmployee_Id(id);
     }
+    public void setTask(Long taskId, Long authorId,  Long employeeToGiveId){
+        Employee employee = employeeRepository.findById(employeeToGiveId).orElseThrow(() -> new EntityNotFoundException("employee not found with id: " + employeeToGiveId));
+        Employee author = employeeRepository.findById(authorId).orElseThrow(() -> new EntityNotFoundException("employee not found with id: " + authorId));
+        Task task = taskRepository.findById(taskId).orElseThrow(() -> new EntityNotFoundException("task not found with id: " + taskId));
+        task.setAuthor(author);
+        task.setEmployee(employee);
+    }
 }

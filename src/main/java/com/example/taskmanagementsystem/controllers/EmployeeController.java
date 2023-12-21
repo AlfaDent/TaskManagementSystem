@@ -38,8 +38,12 @@ public class EmployeeController {
     public void editEmployee(@PathVariable Long id, @RequestBody EmployeeDTO employeeDTO){
         employeeService.editEmployeeById(id, employeeDTO);
     }
-    @GetMapping(value = "employee/{id}/tasks")
+    @GetMapping(value = "/employee/{id}/tasks")
     public List<Task> getTasksByEmployeeId(@PathVariable Long id){
         return employeeService.getAllTasksByEmployeeId(id);
+    }
+    @PostMapping(value = "/employee/{id}/give_task")
+    public void setTaskToEmployee(@PathVariable Long id, @RequestBody Long taskId, @RequestBody Long employeeId){
+        employeeService.setTask(taskId, id,employeeId);
     }
 }

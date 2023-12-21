@@ -31,6 +31,6 @@ public class Employee {
     private List<Task> tasksToDo;
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonManagedReference
-    private List<Task> tasksGiven;
+    private List<Task> tasksToGive;
 
 }
