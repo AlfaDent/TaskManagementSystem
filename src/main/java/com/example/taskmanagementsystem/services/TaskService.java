@@ -2,7 +2,6 @@ package com.example.taskmanagementsystem.services;
 
 import com.example.taskmanagementsystem.DTO.TaskDTO;
 import com.example.taskmanagementsystem.models.task.Task;
-import com.example.taskmanagementsystem.repositories.EmployeeRepository;
 import com.example.taskmanagementsystem.repositories.PriorityRepository;
 import com.example.taskmanagementsystem.repositories.StatusRepository;
 import com.example.taskmanagementsystem.repositories.TaskRepository;
@@ -21,9 +20,6 @@ public class TaskService {
     private StatusRepository statusRepository;
     @Autowired
     private PriorityRepository priorityRepository;
-//    @Autowired
-//    private EmployeeRepository employeeRepository;
-
 
     public List<Task> getAllTasks(){
         return taskRepository.findAll();

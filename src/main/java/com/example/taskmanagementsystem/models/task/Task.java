@@ -1,7 +1,8 @@
 package com.example.taskmanagementsystem.models.task;
 
 import com.example.taskmanagementsystem.models.employee.Employee;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,6 +14,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id"
+)
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,10 +32,9 @@ public class Task {
     private TaskPriority priority;
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    @JsonBackReference("tasksToDo")
+//    @JsonBackReference("tasksToDo")
     private Employee employee;
     @ManyToOne
     @JoinColumn(name = "author_id")
-    @JsonBackReference("tasksToGive")
     private Employee author;
 }
